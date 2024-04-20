@@ -1,0 +1,18 @@
+.pages {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    padding: 40px 10px;
+    gap: 20px;
+}
+
+.selectedPage {
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.page {
+    cursor: pointer;
+}

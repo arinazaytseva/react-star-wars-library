@@ -1,0 +1,67 @@
+.header {
+    width: calc(100% - 84px);
+    height: 15vh;
+    border: solid 2px rgb(195, 195, 195);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px 40px;
+    background-color: rgb(220, 220, 220);
+}
+
+.logo {
+    width: 10%;
+    height: calc(100% - 30px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 50px;
+}
+  
+img {
+    height: 100%;
+}
+
+.menu {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    padding: 10px 40px;
+    font-weight: bold;
+}
+
+.themeSwitcher {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 50px;
+    font-size: 28px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.lineContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.line {
+    width: 0%;
+    height: 3px;
+    background-color: dodgerblue;
+    transition: width 0.5s;
+}
+
+.expanded {
+    width: 100%;
+}
