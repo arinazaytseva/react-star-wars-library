@@ -6,11 +6,33 @@
     font-weight: bold;
     padding: 40px 10px;
     gap: 20px;
+
+    /* color: black; */ /* !!! LIGHT VERSION !!! */
+    color: white;
 }
 
+.lightPages {
+    color: black;
+}
+
+.darkPages {
+    color: white;
+}
+
+
 .selectedPage {
-    color: dodgerblue;
     cursor: pointer;
+
+    /* color: dodgerblue; */ /* !!! LIGHT VERSION !!! */
+    color: red;
+}
+
+.lightSelectedPage {
+    color: dodgerblue;
+}
+
+.darkSelectedPage {
+    color: red;
 }
 
 .page {

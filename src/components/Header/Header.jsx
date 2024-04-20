@@ -1,10 +1,14 @@
 import classes from './Header.module.css';
 import lightLogo from '../../assets/img/star-wars-logo-light.png';
+import darkLogo from '../../assets/img/star-wars-logo-dark.png';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../App'; 
 
 
 const Header = (props) => {
+    const { theme, setTheme } = useContext(ThemeContext);
+
     const useIsHovered = (initialState) => {
         const [isHovered, setIsHovered] = useState(initialState);
         
@@ -26,10 +30,16 @@ const Header = (props) => {
     const [isHoveredStarships, handleMouseEnterStarships, handleMouseLeaveStarships] = useIsHovered(false);
     const [isHoveredVehicles, handleMouseEnterVehicles, handleMouseLeaveVehicles] = useIsHovered(false);
 
+    const toggleTheme = () => {
+        ((theme === 'light') && (setTheme('dark'))) || ((theme === 'dark') && (setTheme('light')))
+    };
+
     return (
-        <div className={classes.header}>
+        <div className={((theme === 'light') && (`${classes.header} ${classes.lightHeader}`)) || 
+            ((theme === 'dark') && (`${classes.header} ${classes.darkHeader}`))}>
             <div className={classes.logo}>
-                <img src={lightLogo} />
+                {(theme === 'light') && <img src={lightLogo} />}
+                {(theme === 'dark') && <img src={darkLogo} />}
             </div>
             <div className={classes.menu}>
                 <div className={classes.item}>
@@ -37,8 +47,13 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterFilms} 
                         onMouseLeave={handleMouseLeaveFilms}>
-                        <NavLink className={classes.link} to='/films'>Films</NavLink>
-                        <div className={isHoveredFilms ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/films'>Films</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/films'>Films</NavLink>}
+                        <div className={
+                            isHoveredFilms 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
                 <div>
@@ -46,8 +61,13 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterPeople} 
                         onMouseLeave={handleMouseLeavePeople}>
-                        <NavLink className={classes.link} to='/people'>People</NavLink>
-                        <div className={isHoveredPeople ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/people'>People</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/people'>People</NavLink>}
+                        <div className={
+                            isHoveredPeople 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
                 <div>
@@ -55,8 +75,13 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterPlanets} 
                         onMouseLeave={handleMouseLeavePlanets}>
-                        <NavLink className={classes.link} to='/planets'>Planets</NavLink>
-                        <div className={isHoveredPlanets ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/planets'>Planets</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/planets'>Planets</NavLink>}
+                        <div className={
+                            isHoveredPlanets 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
                 <div>
@@ -64,8 +89,13 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterSpecies} 
                         onMouseLeave={handleMouseLeaveSpecies}>
-                        <NavLink className={classes.link} to='/species'>Species</NavLink>
-                        <div className={isHoveredSpecies ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/species'>Species</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/species'>Species</NavLink>}
+                        <div className={
+                            isHoveredSpecies 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
                 <div>
@@ -73,8 +103,13 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterStarships} 
                         onMouseLeave={handleMouseLeaveStarships}>
-                        <NavLink className={classes.link} to='/starships'>Starships</NavLink>
-                        <div className={isHoveredStarships ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/starships'>Starships</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/starships'>Starships</NavLink>}
+                        <div className={
+                            isHoveredStarships 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
                 <div>
@@ -82,14 +117,19 @@ const Header = (props) => {
                         className={classes.lineContainer} 
                         onMouseEnter={handleMouseEnterVehicles} 
                         onMouseLeave={handleMouseLeaveVehicles}>
-                        <NavLink className={classes.link} to='/vehicles'>Vehicles</NavLink>
-                        <div className={isHoveredVehicles ? `${classes.line} ${classes.expanded}` : classes.line}></div>
+                            {(theme === 'light') && <NavLink className={`${classes.link} ${classes.lightLink}`} to='/vehicles'>Vehicles</NavLink>}
+                            {(theme === 'dark') && <NavLink className={`${classes.link} ${classes.darkLink}`} to='/vehicles'>Vehicles</NavLink>}
+                        <div className={
+                            isHoveredVehicles 
+                            ? ( ((theme === 'light') && (`${classes.line} ${classes.expanded} ${classes.lightLine}`)) 
+                            || ((theme === 'dark') && (`${classes.line} ${classes.expanded} ${classes.darkLine}`)) )
+                            : classes.line}></div>
                     </div>
                 </div>
             </div>
-            <div className={classes.themeSwitcher}>
-                <i class={`fa-solid fa-toggle-on ${classes.icon}`}></i>
-                {/* <i class={`fa-solid fa-toggle-off ${classes.icon}`}></i> */}
+            <div className={classes.themeSwitcher} onClick={() => {toggleTheme()}}>
+                {(theme === 'light') && <i class={`fa-solid fa-sun`}></i>}
+                {(theme === 'dark') && <i class={`fa-solid fa-moon ${classes.darkIcon} ${classes.icon}`}></i>}
             </div>
         </div>
     );

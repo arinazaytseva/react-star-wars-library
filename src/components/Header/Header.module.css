@@ -1,12 +1,20 @@
 .header {
     width: calc(100% - 84px);
     height: 15vh;
-    border: solid 2px rgb(195, 195, 195);
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     margin: 20px 40px;
+}
+
+.lightHeader {
+    border: solid 2px rgb(195, 195, 195);
     background-color: rgb(220, 220, 220);
+}
+
+.darkHeader {
+    border: solid 2px rgb(40, 40, 40);
+    background-color: rgb(30, 30, 30);
 }
 
 .logo {
@@ -44,8 +52,15 @@ img {
 
 .link {
     text-decoration: none;
-    color: black;
     padding: 5px;
+}
+
+.lightLink {
+    color: black;
+}
+
+.darkLink {
+    color: white;
 }
 
 .lineContainer {
@@ -58,10 +73,22 @@ img {
 .line {
     width: 0%;
     height: 3px;
-    background-color: dodgerblue;
+    border-radius: 2px;
     transition: width 0.5s;
+}
+
+.lightLine {
+    background-color: dodgerblue;
+}
+
+.darkLine {
+    background-color: red;
 }
 
 .expanded {
     width: 100%;
+}
+
+.darkIcon {
+    color: white;
 }
