@@ -1,0 +1,13 @@
+.flexContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.lightFlexContainer {
+  background-color: white;
+}
+
+.darkFlexContainer {
+  background-color: black;
+}

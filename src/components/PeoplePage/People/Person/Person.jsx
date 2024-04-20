@@ -1,9 +1,14 @@
 import classes from './Person.module.css';
+import { ThemeContext } from '../../../../App';
+import { useContext } from 'react';
 
 
 const Person = (props) => {
+    const { theme, setTheme } = useContext(ThemeContext);
+
     return (
-        <div className={classes.flexContainer}>
+        <div className={((theme === 'light') && (`${classes.flexContainer} ${classes.lightFlexContainer}`)) 
+            || ((theme === 'dark') && (`${classes.flexContainer} ${classes.darkFlexContainer}`))}>
             <div className={`${classes.item}`}><h1 className={classes.name}>{props.name}</h1></div>
             <div className={classes.item}>
                 <div className={classes.headerField}>Height</div>

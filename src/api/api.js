@@ -8,11 +8,13 @@ const instance = axios.create({
 export const peopleAPI = {
     getPeople: async (currentPage) => {
         const response = await instance.get(`people?page=${currentPage}`);
-        // console.log(response);
         return response.data;
     }
-    // getPerson: async (personId) => {
-    //     const result = instance.get(`people/${personId}`);
-    //     return result.data;
-    // }
+};
+
+export const filmsAPI = {
+    getFilms: async () => {
+        const response = await instance.get(`films`);
+        return response.data;
+    }
 };
