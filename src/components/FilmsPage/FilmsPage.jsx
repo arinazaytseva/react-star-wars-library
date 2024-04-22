@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import classes from './FilmsPage.module.css';
 import { connect } from "react-redux";
 import { getFilms } from '../../redux/filmsReducer';
@@ -34,12 +33,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FilmsPage);
-=======
-const FilmsPage = () => {
-    return (
-        <div></div>
-    );
-};
-
-export default FilmsPage;
->>>>>>> 7ddb4fa88a7edfd256ef6169f1a98400c4f7a095
