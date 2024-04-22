@@ -1,37 +1,76 @@
-.header {
-    width: calc(100% - 84px);
-    height: 15vh;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    margin: 20px 40px;
-}
-
+/* LIGHT VERSION STYLES */
 .lightHeader {
     border: solid 2px rgb(195, 195, 195);
     background-color: rgb(220, 220, 220);
 }
 
+.lightLink {
+    color: black;
+}
+
+.lightLine {
+    background-color: dodgerblue;
+}
+
+.lightIcon:hover {
+    color: dodgerblue;
+    font-size: 30px;
+}
+
+/* DARK VERSION STYLES */
 .darkHeader {
     border: solid 2px rgb(40, 40, 40);
     background-color: rgb(30, 30, 30);
 }
 
-.logo {
-    width: 10%;
-    height: calc(100% - 30px);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 15px 50px;
+.darkLink {
+    color: white;
 }
-  
+
+.darkLine {
+    background-color: red;
+}
+
+.darkIcon:hover {
+    color: red;
+    font-size: 30px;
+}
+
+/* BASE STYLES */
+.headerContainer {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 25vh;
+    padding: 35px;
+}
+
+.header {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+}
+
+.logo {
+    box-sizing: border-box;
+    width: 15%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 img {
     height: 100%;
 }
 
 .menu {
-    width: 80%;
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -42,12 +81,32 @@ img {
 }
 
 .themeSwitcher {
-    width: 10%;
+    box-sizing: border-box;
+    width: 15%;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 10px 50px;
     font-size: 28px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item .line {
+    width: 0%;
+    height: 3px;
+    border-radius: 2px;
+    transition: all ease 0.5s;
+}
+
+.item:hover .line {
+    width: 100%;
 }
 
 .link {
@@ -55,40 +114,10 @@ img {
     padding: 5px;
 }
 
-.lightLink {
-    color: black;
-}
-
-.darkLink {
-    color: white;
-}
-
-.lineContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.line {
-    width: 0%;
-    height: 3px;
-    border-radius: 2px;
-    transition: width 0.5s;
-}
-
-.lightLine {
-    background-color: dodgerblue;
-}
-
-.darkLine {
-    background-color: red;
-}
-
-.expanded {
-    width: 100%;
-}
-
 .darkIcon {
     color: white;
+}
+
+.icon {
+    transition: all ease 0.25s;
 }

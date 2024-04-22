@@ -6,10 +6,18 @@ import { useContext } from 'react';
 const Pages = (props) => {
     const { theme, setTheme } = useContext(ThemeContext);
 
-    const pagesCount = Math.ceil(props.totalPeopleCount / 10);
+    const pagesCount = Math.ceil(props.totalCount / 10);
     const pages = [];
     for (let index = 1; index <= pagesCount; index++) {
         pages.push(index);
+    };
+
+    const setCurrentPage = (page) => {
+        props.setCurrentPage(page);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
 
     const pagesElements = pages.map(page => 
@@ -20,7 +28,7 @@ const Pages = (props) => {
             ? (((theme === 'light') && (`${classes.selectedPage} ${classes.lightSelectedPage }`)) 
             || ((theme === 'dark') && (`${classes.selectedPage} ${classes.darkSelectedPage }`)))
             : classes.page}
-            onClick={() => {props.setCurrentPage(page)}}>{page}</span>
+            onClick={() => {setCurrentPage(page)}}>{page}</span>
     );
     
     return (

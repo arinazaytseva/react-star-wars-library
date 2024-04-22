@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getPeople, setCurrentPageAC } from '../../redux/peopleReducer';
 import { useEffect } from 'react';
 import People from './People/People';
-import Pages from './Pages/Pages';
+import Pages from '../common/Pages/Pages';
 
 
 const PeoplePage = (props) => {
@@ -15,7 +15,7 @@ const PeoplePage = (props) => {
         <div className={classes.flexContainer}>
             <People people={props.people} />
             <Pages 
-                totalPeopleCount={props.totalPeopleCount} 
+                totalCount={props.totalPeopleCount} 
                 currentPage={props.currentPage}
                 setCurrentPage={props.setCurrentPage} />
         </div>
