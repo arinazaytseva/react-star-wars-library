@@ -1,6 +1,9 @@
 .flexContainer {
   width: 100vw;
+<<<<<<< HEAD
   min-height: 100vh;
+=======
+>>>>>>> 7ddb4fa88a7edfd256ef6169f1a98400c4f7a095
   display: flex;
   flex-direction: column;
 }

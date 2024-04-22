@@ -17,6 +17,7 @@ export const filmsAPI = {
         const response = await instance.get(`films`);
         return response.data;
     }
+<<<<<<< HEAD
 };
 
 export const planetsAPI = {
@@ -45,4 +46,6 @@ export const vehiclesAPI = {
         const response = await instance.get(`vehicles?page=${currentPage}`);
         return response.data;
     }
+=======
+>>>>>>> 7ddb4fa88a7edfd256ef6169f1a98400c4f7a095
 };

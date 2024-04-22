@@ -28,7 +28,22 @@
     border-radius: 15px;
     margin: 20px;
     padding: 15px;
+<<<<<<< HEAD
     transition: box-shadow ease 1s;
+=======
+}
+
+.lightFlexContainer {
+    border: solid 2px rgb(195, 195, 195);
+    background-color: rgb(220, 220, 220);
+    color: black;
+}
+
+.darkFlexContainer {
+    border: solid 2px rgb(40, 40, 40);
+    background-color: rgb(30, 30, 30);
+    color: white;
+>>>>>>> 7ddb4fa88a7edfd256ef6169f1a98400c4f7a095
 }
 
 .name {
