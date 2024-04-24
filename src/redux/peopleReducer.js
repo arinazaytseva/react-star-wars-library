@@ -12,23 +12,20 @@ const initialState = {
 
 const peopleReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_PEOPLE: {
+        case SET_PEOPLE:
             return {
                 ...state,
                 people: action.data.people,
                 totalPeopleCount: action.data.totalPeopleCount
             };
-        };
-        case SET_CURRENT_PAGE: {
+        case SET_CURRENT_PAGE:
             return {
                 ...state,
                 currentPage: action.currentPage
             };
-        };
-        default: {
+        default:
             return state;
         };
-    };
 };
 
 const setPeopleAC = (data) => ({ type: SET_PEOPLE, data });

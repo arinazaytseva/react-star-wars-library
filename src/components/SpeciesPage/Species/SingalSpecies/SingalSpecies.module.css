@@ -1,0 +1,50 @@
+/* LIGHT VERSION STYLES */
+.lightFlexContainer {
+    border: solid 2px rgb(195, 195, 195);
+    background-color: rgb(220, 220, 220);
+    color: black;
+}
+
+.lightFlexContainer:hover {
+    box-shadow: 0 0 20px 10px rgba(30, 144, 255, 0.5);
+}
+
+/* DARK VERSION STYLES */
+.darkFlexContainer {
+    border: solid 2px rgb(40, 40, 40);
+    background-color: rgb(30, 30, 30);
+    color: white;
+}
+
+.darkFlexContainer:hover {
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5);
+}
+
+/* BASE STYLES */
+.flexContainer {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 15px;
+    transition: box-shadow ease 1s;
+}
+
+.name {
+    margin: 0 0 10px 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerField {
+    width: 40%;
+    font-weight: bold;
+}
+
+.field {
+    width: 60%;
+}

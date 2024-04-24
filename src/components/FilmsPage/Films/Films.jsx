@@ -14,7 +14,7 @@ const Films = (props) => {
     );
 
     return (
-        <div className={classes.films}>
+        <div className={classes.elementsContainer}>
             {filmsElements}
         </div>
     );

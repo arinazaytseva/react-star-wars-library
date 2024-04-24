@@ -13,6 +13,7 @@ const Pages = (props) => {
     };
 
     const setCurrentPage = (page) => {
+        console.log(page);
         props.setCurrentPage(page);
         window.scrollTo({
             top: 0,
@@ -24,10 +25,10 @@ const Pages = (props) => {
         <span 
             key={page} 
             className={
-            page === props.currentPage 
-            ? (((theme === 'light') && (`${classes.selectedPage} ${classes.lightSelectedPage }`)) 
-            || ((theme === 'dark') && (`${classes.selectedPage} ${classes.darkSelectedPage }`)))
-            : classes.page}
+                page === props.currentPage 
+                    ? (((theme === 'light') && (`${classes.selectedPage} ${classes.lightSelectedPage }`)) 
+                    || ((theme === 'dark') && (`${classes.selectedPage} ${classes.darkSelectedPage }`)))
+                    : classes.page}
             onClick={() => {setCurrentPage(page)}}>{page}</span>
     );
     

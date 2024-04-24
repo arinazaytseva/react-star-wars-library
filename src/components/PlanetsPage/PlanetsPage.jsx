@@ -7,7 +7,6 @@ import Pages from '../common/Pages/Pages';
 
 
 const PlanetsPage = (props) => {
-    console.log('PlanetsPage');
     useEffect(() => {
         props.getPlanets(props.currentPage);
     }, [props.currentPage]);

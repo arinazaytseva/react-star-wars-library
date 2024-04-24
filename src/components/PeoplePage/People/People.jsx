@@ -17,7 +17,7 @@ const People = (props) => {
     );
     
     return (
-        <div className={classes.people}>
+        <div className={classes.elementsContainer}>
             {peopleElements}
         </div>
     );

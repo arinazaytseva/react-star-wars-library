@@ -10,24 +10,21 @@ const initialState = {
     currentPage: 1
 };
 
-const planetsPage = (state = initialState, action) => {
+const planetsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_PLANETS: {
+        case SET_PLANETS:
             return {
                 ...state,
                 planets: action.data.planets,
                 totalPlanetsCount: action.data.totalPlanetsCount
             };
-        };
-        case SET_CURRENT_PAGE: {
+        case SET_CURRENT_PAGE:
             return {
                 ...state,
                 currentPage: action.currentPage
             };
-        };
-        default: {
+        default:
             return state;
-        };
     };
 };
 
@@ -42,4 +39,4 @@ export const getPlanets = (currentPage) => {
     };
 };
 
-export default planetsPage;
+export default planetsReducer;

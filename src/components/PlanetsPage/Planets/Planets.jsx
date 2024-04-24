@@ -18,7 +18,7 @@ const Planets = (props) => {
     );
     
     return (
-        <div className={classes.planets}>
+        <div className={classes.elementsContainer}>
             {planetsElements}
         </div>
     );

@@ -9,15 +9,13 @@ const initialState = {
 
 const filmsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_FILMS: {
+        case SET_FILMS:
             return {
                 ...state,
                 films: action.data
             };
-        };
-        default: {
+        default:
             return state;
-        };
     };
 };
 
